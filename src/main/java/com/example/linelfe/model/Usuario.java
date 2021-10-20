@@ -1,18 +1,18 @@
 package com.example.linelfe.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "usr_email", nullable = false, length = 100)
     private String email;
-    private String senha;
+    @Column(name = "password", nullable = false, length = 100)
+    private String password;
 
     public Integer getId() {
         return id;
@@ -26,12 +26,10 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getSenha() {
-        return senha;
+    public String getPassword() {
+        return password;
     }
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setPassword(String password) {
+        this.password = password;
     }
-
-
 }

@@ -1,4 +1,6 @@
 package com.example.linelfe.repository;
 
-public interface LancamentoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface LancamentoRepository extends JpaRepository {
 }
